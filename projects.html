@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inline style for the PDF iframe */
+        #myPDF {
+            width: 85%; /* Adjust width as needed */
+            height: 975px; /* Adjust height as needed */
+            margin: 20px auto; /* Center the iframe */
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -20,10 +29,11 @@
     </header>
     <main>
         <p>This is some information about my projects.</p>
+        <!-- Embed the PDF using an iframe -->
+        <iframe id="myPDF" src="Portfolio.pdf" frameborder="0"></iframe>
     </main>
     <footer>
         <p>Copyright &copy; 2024 by Me</p>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>
