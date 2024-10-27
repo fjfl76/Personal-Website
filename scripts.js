@@ -5,27 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadBlogPosts() {
     const postsList = document.getElementById('posts-list');
-    const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    
+    // Fetch blog posts from JSON file
+    fetch('blog-posts.json')
+        .then(response => response.json())
+        .then(posts => {
+            postsList.innerHTML = ''; // Clear existing list
+            posts.forEach(post => {
+                const listItem = document.createElement('li');
+                
+                // Create link for displaying the post
+                const link = document.createElement('a');
+                link.href = "#";
+                link.textContent = post.title;
+                link.onclick = () => displayPostContent(post);
+                listItem.appendChild(link);
 
-    postsList.innerHTML = ''; // Clear existing list
-    posts.forEach((post, index) => {
-        const listItem = document.createElement('li');
-        
-        // Create link for displaying the post
-        const link = document.createElement('a');
-        link.href = "#";
-        link.textContent = post.title;
-        link.onclick = () => displayPostContent(post);
-        listItem.appendChild(link);
-
-        // Create delete button
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = "Delete";
-        deleteButton.onclick = () => deleteBlogPost(index);
-        listItem.appendChild(deleteButton);
-
-        postsList.appendChild(listItem);
-    });
+                postsList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error loading blog posts:', error));
 }
 
 function displayPostContent(post) {
