@@ -55,3 +55,17 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #555;
 }
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #575757;
+}
