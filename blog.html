@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="weekendplayer.ico" type="image/x-icon">
 </head>
 <body>
     <nav>
@@ -21,21 +20,15 @@
     </header>
     <main>
         <section id="blog-posts">
-            <h2>Previous Posts</h2>
+            <h2>Blog Posts</h2>
             <ul id="posts-list">
-                <!-- JavaScript will insert posts here -->
+                <!-- Blog posts will be inserted here via JavaScript -->
             </ul>
         </section>
         <section id="post-content" style="display: none;">
             <h2 id="post-title"></h2>
             <p id="post-body"></p>
             <button onclick="hidePostContent()">Back to Posts</button>
-        </section>
-        <section id="new-post">
-            <h2>Write a New Blog Post</h2>
-            <textarea id="blog-content" placeholder="Write your thoughts here..." rows="10" cols="50"></textarea><br>
-            <input type="text" id="blog-title" placeholder="Title" /><br>
-            <button onclick="addBlogPost()">Add Blog Post</button>
         </section>
     </main>
     <footer>
